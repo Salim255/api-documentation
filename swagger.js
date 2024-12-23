@@ -7,7 +7,7 @@ const swaggerOptions = {
         info: {
             title: 'My API Documentation',
             version: '1.0.0',
-            description: 'API documentation for my application',
+            description: 'Salim API documentation for my application',
         },
 
         severs: [
@@ -16,7 +16,10 @@ const swaggerOptions = {
             }
         ] 
     },
-    apis: ['./routes/*.js']
+    apis: ['./src/routes/*.js']
 }
 
-const swaggerDocs = swaggerJsdoc(swaggerOptions)
+// Generate Swagger specification
+const swaggerSpec = swaggerJsdoc(swaggerOptions);
+
+module.exports = { swaggerUi, swaggerSpec };
