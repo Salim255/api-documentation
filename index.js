@@ -1,17 +1,15 @@
-const express = require('express');
-const { swaggerUi, swaggerSpec } = require('./swagger'); // Import swaggerUi and swaggerSpec
-const usersRouter = require('./src/routes/users')
+// Import the configured Express application
+const app = require('./app');
+
+// Set up the Express application port
 const port = 3000;
 
-const app = express();
-
-// API documentation route using swaggerUi
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-
-// Use the users router for /users path
-app.use('/users', usersRouter);
-
-app.listen(port, () => {
+// Start the Express application on the specified port 
+app().listen(port, () => {
+    // Log a message that to indicate that the application is running
+    // and listening for requests
     console.log(`Application running on http://localhost:${port}`);
+
+    // Log a message that indicate where the Swagger documentation is available
     console.log(`Swagger docs available at http://localhost:${port}/api-docs`);
 })
