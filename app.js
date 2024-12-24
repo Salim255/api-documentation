@@ -1,4 +1,4 @@
-const { swaggerUi, swaggerSpec } = require('./swagger'); // Import swaggerUi and swaggerSpec
+const { swaggerUi, swaggerSpec } = require('./src/swaggerDocs/swagger'); // Import swaggerUi and swaggerSpec
 
 // Import Express framework for building Express application
 const express = require('express');
